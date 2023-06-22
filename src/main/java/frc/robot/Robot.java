@@ -67,7 +67,7 @@ public void autonomousInit(){
     rightMotor3.set(-0.5);
 
     try {
-      Thread.sleep(50000);
+      Thread.sleep(5000);
     } catch (InterruptedException ie) {
       Thread.currentThread().interrupt();
     }
