@@ -17,11 +17,13 @@ public class Robot extends TimedRobot {
   private final CANSparkMax rightMotor1 = new CANSparkMax(3, MotorType.kBrushless);
   private final CANSparkMax rightMotor2 = new CANSparkMax(4, MotorType.kBrushless);
   private final CANSparkMax rightMotor3 = new CANSparkMax(5, MotorType.kBrushless);
-  
-  MotorControllerGroup leftMotors = new MotorControllerGroup(leftMotor1, leftMotor2, leftMotor3);
-  MotorControllerGroup rightMotors = new MotorControllerGroup(rightMotor1, rightMotor2, rightMotor3);
+  MotorControllerGroup rightMotors;
+  MotorControllerGroup leftMotors;
+ 
   public void robotInit() {
-
+  leftMotors = new MotorControllerGroup(leftMotor1, leftMotor2, leftMotor3);
+  rightMotors = new MotorControllerGroup(rightMotor1, rightMotor2, rightMotor3);    
+  rightMotors.setInverted(true);
   }
 
 public void autonomousInit(){
